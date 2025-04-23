@@ -1,4 +1,5 @@
 import React from 'react';
+import ExternalRatings from './ExternalRatings';
 
 const RatingSummary = ({ ratings, selectedSDK }) => {
   const tasks = Object.keys(ratings);
@@ -7,26 +8,30 @@ const RatingSummary = ({ ratings, selectedSDK }) => {
     : 0;
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-lg space-y-4">
-      <h2 className="text-xl font-bold text-center">Rating Summary for {selectedSDK}</h2>
-      
-      <div className="space-y-3">
-        {tasks.map((task) => (
-          <div key={task} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-            <span className="font-medium">{task}</span>
-            <div className="flex items-center">
-              <span className="text-yellow-500 mr-2">{ratings[task]} ★</span>
+    <div className="space-y-6">
+      <div className="bg-white p-6 rounded-2xl shadow-lg space-y-4">
+        <h2 className="text-xl font-bold text-center">Rating Summary for {selectedSDK}</h2>
+        
+        <div className="space-y-3">
+          {tasks.map((task) => (
+            <div key={task} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+              <span className="font-medium">{task}</span>
+              <div className="flex items-center">
+                <span className="text-yellow-500 mr-2">{ratings[task]} ★</span>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-        <div className="text-center">
-          <p className="text-sm text-gray-600">Average Rating</p>
-          <p className="text-2xl font-bold text-blue-600">{averageRating} ★</p>
+        <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+          <div className="text-center">
+            <p className="text-sm text-gray-600">Your Average Rating</p>
+            <p className="text-2xl font-bold text-blue-600">{averageRating} ★</p>
+          </div>
         </div>
       </div>
+
+      <ExternalRatings selectedSDK={selectedSDK} />
     </div>
   );
 };
