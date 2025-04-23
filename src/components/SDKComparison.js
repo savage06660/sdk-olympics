@@ -17,37 +17,37 @@ const SDKComparison = ({ ratings, selectedSDK }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-lg space-y-4">
-      <h2 className="text-xl font-bold text-center mb-4">SDK Comparison</h2>
+    <div className="bg-gray-800 p-6 rounded-2xl shadow-lg space-y-4">
+      <h2 className="text-xl font-bold text-center text-white mb-4">SDK Comparison</h2>
       
       <div className="overflow-x-auto">
         <table className="min-w-full">
           <thead>
-            <tr className="bg-gray-50">
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-500">SDK</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-500">GitHub Stars</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-500">NPM Downloads</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-500">Community Rating</th>
+            <tr className="bg-gray-700">
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-200">SDK</th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-200">GitHub Stars</th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-200">NPM Downloads</th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-200">Community Rating</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-700">
             {Object.entries(allSDKs).map(([sdk, data]) => (
               <tr 
                 key={sdk}
-                className={`hover:bg-gray-50 ${
-                  sdk === selectedSDK ? 'bg-blue-50' : ''
+                className={`hover:bg-gray-700 ${
+                  sdk === selectedSDK ? 'bg-gray-700' : ''
                 }`}
               >
                 <td className="px-4 py-2">
                   <div className="flex items-center">
-                    <span className="font-medium">{sdk}</span>
+                    <span className="font-medium text-gray-200">{sdk}</span>
                     {sdk === selectedSDK && (
-                      <span className="ml-2 text-blue-600">(Selected)</span>
+                      <span className="ml-2 text-blue-400">(Selected)</span>
                     )}
                   </div>
                 </td>
-                <td className="px-4 py-2">{data.githubStars.toLocaleString()}</td>
-                <td className="px-4 py-2">{data.npmDownloads}</td>
+                <td className="px-4 py-2 text-gray-200">{data.githubStars.toLocaleString()}</td>
+                <td className="px-4 py-2 text-gray-200">{data.npmDownloads}</td>
                 <td className="px-4 py-2">
                   <span className="text-yellow-500">{data.communityRating} ★</span>
                 </td>
@@ -57,7 +57,7 @@ const SDKComparison = ({ ratings, selectedSDK }) => {
         </table>
       </div>
 
-      <div className="mt-4 text-sm text-gray-500">
+      <div className="mt-4 text-sm text-gray-400">
         <p>* Data is updated regularly from GitHub and NPM</p>
         <p>* Community ratings are based on user feedback</p>
       </div>
