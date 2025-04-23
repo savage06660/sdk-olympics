@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import RatingSummary from "./components/RatingSummary";
 import SDKComparison from "./components/SDKComparison";
+import { SDK_METADATA } from "./components/SDKMetadata";
 
 const SDK_TASKS = {
   WalletConnect: ["Install SDK", "Connect Wallet", "Send Test Transaction"],
@@ -105,11 +106,28 @@ export default function App() {
               >
                 <option value="">-- Select SDK --</option>
                 {Object.keys(SDK_TASKS).map((sdk) => (
-                  <option key={sdk} value={sdk}>
+                  <option key={sdk} value={sdk} className="flex items-center space-x-2">
                     {sdk}
                   </option>
                 ))}
               </select>
+              {selectedSDK && (
+                <div className="mt-2 flex items-center space-x-3">
+                  <img 
+                    src={SDK_METADATA[selectedSDK].logo}
+                    alt={`${selectedSDK} logo`}
+                    className="w-6 h-6 object-contain"
+                  />
+                  <a 
+                    href={SDK_METADATA[selectedSDK].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 text-sm"
+                  >
+                    Visit {selectedSDK} website
+                  </a>
+                </div>
+              )}
             </div>
 
             {selectedSDK && !submitted && (

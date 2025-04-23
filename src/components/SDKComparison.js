@@ -1,4 +1,5 @@
 import React from 'react';
+import { SDK_METADATA } from './SDKMetadata';
 
 const SDKComparison = ({ ratings, selectedSDK }) => {
   const allSDKs = {
@@ -39,12 +40,25 @@ const SDKComparison = ({ ratings, selectedSDK }) => {
                 }`}
               >
                 <td className="px-4 py-2">
-                  <div className="flex items-center">
-                    <span className="font-medium text-gray-200">{sdk}</span>
-                    {sdk === selectedSDK && (
-                      <span className="ml-2 text-blue-400">(Selected)</span>
-                    )}
-                  </div>
+                  <a 
+                    href={SDK_METADATA[sdk].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-3 hover:text-blue-400 transition-colors"
+                  >
+                    <img 
+                      src={SDK_METADATA[sdk].logo}
+                      alt={`${sdk} logo`}
+                      className="w-6 h-6 object-contain"
+                    />
+                    <div>
+                      <span className="font-medium text-gray-200">{sdk}</span>
+                      {sdk === selectedSDK && (
+                        <span className="ml-2 text-blue-400">(Selected)</span>
+                      )}
+                      <p className="text-sm text-gray-400">{SDK_METADATA[sdk].description}</p>
+                    </div>
+                  </a>
                 </td>
                 <td className="px-4 py-2 text-gray-200">{data.githubStars.toLocaleString()}</td>
                 <td className="px-4 py-2 text-gray-200">{data.npmDownloads}</td>
