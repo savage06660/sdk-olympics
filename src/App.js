@@ -77,6 +77,14 @@ export default function App() {
           </div>
         </div>
 
+        <div className="flex justify-center">
+          <img 
+            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDU2d2cxYWYwZ3lqNXVwdWVnZXJ3M2M4NDBiN3o3bnpkdXZvbzA3biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/78XCFBGOlS6keY1Bil/giphy.gif"
+            alt="SDK Olympics"
+            className="rounded-lg shadow-lg max-w-full h-auto"
+          />
+        </div>
+
         {showComparison && (
           <SDKComparison ratings={ratings} selectedSDK={selectedSDK} />
         )}
