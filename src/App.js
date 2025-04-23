@@ -47,7 +47,17 @@ export default function App() {
       <div className="max-w-xl mx-auto space-y-6">
         {!showSummary ? (
           <div className="bg-white p-6 rounded-2xl shadow-lg space-y-6">
-            <h1 className="text-2xl font-bold text-center">🏅 SDK Olympics</h1>
+            <div className="flex justify-between items-center">
+              <h1 className="text-2xl font-bold">🏅 SDK Olympics</h1>
+              {Object.keys(ratings).length > 0 && (
+                <button
+                  onClick={() => setShowSummary(true)}
+                  className="text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  View Summary
+                </button>
+              )}
+            </div>
 
             <div className="space-y-2">
               <label className="block font-medium">Choose a Web3 SDK:</label>
