@@ -55,22 +55,22 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6 font-sans">
+    <div className="min-h-screen bg-gray-900 p-6 font-sans text-gray-100">
       <div className="max-w-4xl mx-auto space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">🏅 SDK Olympics</h1>
+          <h1 className="text-2xl font-bold text-white">🏅 SDK Olympics</h1>
           <div className="space-x-4">
             {Object.keys(ratings).length > 0 && (
               <button
                 onClick={() => setShowSummary(true)}
-                className="text-blue-600 hover:text-blue-800 font-medium"
+                className="text-blue-400 hover:text-blue-300 font-medium"
               >
                 View Summary
               </button>
             )}
             <button
               onClick={() => setShowComparison(!showComparison)}
-              className="text-blue-600 hover:text-blue-800 font-medium"
+              className="text-blue-400 hover:text-blue-300 font-medium"
             >
               {showComparison ? "Hide Comparison" : "Show Comparison"}
             </button>
@@ -90,11 +90,11 @@ export default function App() {
         )}
 
         {!showSummary ? (
-          <div className="bg-white p-6 rounded-2xl shadow-lg space-y-6">
+          <div className="bg-gray-800 p-6 rounded-2xl shadow-lg space-y-6">
             <div className="space-y-2">
-              <label className="block font-medium">Choose a Web3 SDK:</label>
+              <label className="block font-medium text-gray-200">Choose a Web3 SDK:</label>
               <select
-                className="w-full p-2 border rounded"
+                className="w-full p-2 border rounded bg-gray-700 text-gray-100 border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                 value={selectedSDK}
                 onChange={(e) => {
                   setSelectedSDK(e.target.value);
@@ -114,8 +114,8 @@ export default function App() {
 
             {selectedSDK && !submitted && (
               <div className="space-y-4">
-                <div className="bg-blue-50 p-4 rounded-xl">
-                  <p className="font-medium mb-2">
+                <div className="bg-gray-700 p-4 rounded-xl">
+                  <p className="font-medium mb-2 text-gray-200">
                     Step {stepIndex + 1}: {tasks[stepIndex]}
                   </p>
                   <div className="flex items-center space-x-2">
@@ -126,7 +126,7 @@ export default function App() {
                         className={`text-2xl ${
                           ratings[tasks[stepIndex]] >= star
                             ? "text-yellow-500"
-                            : "text-gray-300"
+                            : "text-gray-500"
                         }`}
                       >
                         ★
@@ -136,7 +136,7 @@ export default function App() {
                 </div>
 
                 <button
-                  className="w-full bg-blue-600 text-white p-2 rounded-xl hover:bg-blue-700"
+                  className="w-full bg-blue-600 text-white p-2 rounded-xl hover:bg-blue-700 transition-colors"
                   onClick={nextStep}
                 >
                   {stepIndex < tasks.length - 1 ? "Next Step" : "Submit Ratings"}
@@ -146,19 +146,19 @@ export default function App() {
 
             {submitted && (
               <div className="space-y-4">
-                <div className="bg-green-100 p-4 rounded-xl text-center">
-                  <h2 className="text-lg font-semibold text-green-800">✅ All Done!</h2>
-                  <p className="text-green-700 mt-1">Thanks for rating {selectedSDK}!</p>
+                <div className="bg-green-900 p-4 rounded-xl text-center">
+                  <h2 className="text-lg font-semibold text-green-400">✅ All Done!</h2>
+                  <p className="text-green-300 mt-1">Thanks for rating {selectedSDK}!</p>
                 </div>
                 <div className="flex space-x-4">
                   <button
-                    className="flex-1 bg-blue-600 text-white p-2 rounded-xl hover:bg-blue-700"
+                    className="flex-1 bg-blue-600 text-white p-2 rounded-xl hover:bg-blue-700 transition-colors"
                     onClick={() => setShowSummary(true)}
                   >
                     View Summary
                   </button>
                   <button
-                    className="flex-1 bg-gray-600 text-white p-2 rounded-xl hover:bg-gray-700"
+                    className="flex-1 bg-gray-600 text-white p-2 rounded-xl hover:bg-gray-700 transition-colors"
                     onClick={resetForm}
                   >
                     Rate Another SDK
@@ -171,7 +171,7 @@ export default function App() {
           <div className="space-y-4">
             <RatingSummary ratings={ratings} selectedSDK={selectedSDK} />
             <button
-              className="w-full bg-gray-600 text-white p-2 rounded-xl hover:bg-gray-700"
+              className="w-full bg-gray-600 text-white p-2 rounded-xl hover:bg-gray-700 transition-colors"
               onClick={resetForm}
             >
               Rate Another SDK

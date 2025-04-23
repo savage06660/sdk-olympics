@@ -105,11 +105,11 @@ const ExternalRatings = ({ selectedSDK }) => {
 
   if (loading) {
     return (
-      <div className="bg-white p-4 rounded-lg shadow">
+      <div className="bg-gray-800 p-4 rounded-lg shadow">
         <div className="animate-pulse space-y-3">
-          <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-          <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-          <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+          <div className="h-4 bg-gray-700 rounded w-3/4"></div>
+          <div className="h-4 bg-gray-700 rounded w-1/2"></div>
+          <div className="h-4 bg-gray-700 rounded w-2/3"></div>
         </div>
       </div>
     );
@@ -117,7 +117,7 @@ const ExternalRatings = ({ selectedSDK }) => {
 
   if (error) {
     return (
-      <div className="bg-red-50 p-4 rounded-lg text-red-600">
+      <div className="bg-red-900/50 p-4 rounded-lg text-red-400">
         {error}
       </div>
     );
@@ -128,24 +128,24 @@ const ExternalRatings = ({ selectedSDK }) => {
   }
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow space-y-3">
-      <h3 className="font-semibold text-gray-700">Community Data</h3>
+    <div className="bg-gray-800 p-4 rounded-lg shadow space-y-3">
+      <h3 className="font-semibold text-gray-200">Community Data</h3>
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-gray-50 p-3 rounded">
-          <p className="text-sm text-gray-600">GitHub Stars</p>
-          <p className="text-lg font-semibold">{externalRatings.githubStars.toLocaleString()}</p>
+        <div className="bg-gray-700 p-3 rounded">
+          <p className="text-sm text-gray-400">GitHub Stars</p>
+          <p className="text-lg font-semibold text-gray-200">{externalRatings.githubStars.toLocaleString()}</p>
         </div>
-        <div className="bg-gray-50 p-3 rounded">
-          <p className="text-sm text-gray-600">NPM Downloads</p>
-          <p className="text-lg font-semibold">{externalRatings.npmDownloads}</p>
+        <div className="bg-gray-700 p-3 rounded">
+          <p className="text-sm text-gray-400">NPM Downloads</p>
+          <p className="text-lg font-semibold text-gray-200">{externalRatings.npmDownloads}</p>
         </div>
-        <div className="bg-gray-50 p-3 rounded">
-          <p className="text-sm text-gray-600">Community Rating</p>
+        <div className="bg-gray-700 p-3 rounded">
+          <p className="text-sm text-gray-400">Community Rating</p>
           <p className="text-lg font-semibold text-yellow-500">{externalRatings.communityRating} ★</p>
         </div>
-        <div className="bg-gray-50 p-3 rounded">
-          <p className="text-sm text-gray-600">Last Updated</p>
-          <p className="text-lg font-semibold">{externalRatings.lastUpdated}</p>
+        <div className="bg-gray-700 p-3 rounded">
+          <p className="text-sm text-gray-400">Last Updated</p>
+          <p className="text-lg font-semibold text-gray-200">{externalRatings.lastUpdated}</p>
         </div>
       </div>
     </div>
