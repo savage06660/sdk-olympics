@@ -1,61 +1,61 @@
 export const SDK_METADATA = {
   WalletConnect: {
-    logo: "https://raw.githubusercontent.com/WalletConnect/walletconnect-assets/master/Logo/Blue%20(Default)/Logo.svg",
+    logo: "https://seeklogo.com/images/W/walletconnect-logo-EE83B50C97-seeklogo.com.png",
     url: "https://walletconnect.com",
     description: "Open protocol for connecting Wallets to Dapps"
   },
   Magic: {
-    logo: "https://magic.link/docs/assets/magic-logo.svg",
+    logo: "https://seeklogo.com/images/M/magic-logo-0C3B8F0C3B-seeklogo.com.png",
     url: "https://magic.link",
     description: "Passwordless Authentication & Web3 Infrastructure"
   },
   Coinbase: {
-    logo: "https://www.coinbase.com/assets/press/coinbase-logo-1-31bfc325fca983caa75f575beb13e05c.svg",
+    logo: "https://seeklogo.com/images/C/coinbase-coin-logo-C86F46D7B8-seeklogo.com.png",
     url: "https://www.coinbase.com/wallet",
     description: "The most trusted crypto wallet"
   },
   Web3Modal: {
-    logo: "https://web3modal.com/images/logo.svg",
+    logo: "https://seeklogo.com/images/W/web3-logo-0EAD1C3F8D-seeklogo.com.png",
     url: "https://web3modal.com",
     description: "The single Web3 modal solution for all Wallets"
   },
   RainbowKit: {
-    logo: "https://rainbowkit.com/rainbow.svg",
+    logo: "https://seeklogo.com/images/R/rainbow-logo-0EAD1C3F8D-seeklogo.com.png",
     url: "https://rainbowkit.com",
     description: "The best way to connect a wallet"
   },
   ethers: {
-    logo: "https://ethers.org/img/ethers-logo.svg",
+    logo: "https://seeklogo.com/images/E/ethereum-logo-0EAD1C3F8D-seeklogo.com.png",
     url: "https://ethers.org",
     description: "Complete Ethereum library and wallet implementation"
   },
   web3js: {
-    logo: "https://web3js.readthedocs.io/en/v1.10.0/_images/web3js.svg",
+    logo: "https://seeklogo.com/images/W/web3-logo-0EAD1C3F8D-seeklogo.com.png",
     url: "https://web3js.readthedocs.io",
     description: "Ethereum JavaScript API"
   },
   Thirdweb: {
-    logo: "https://thirdweb.com/logo.svg",
+    logo: "https://seeklogo.com/images/T/thirdweb-logo-0EAD1C3F8D-seeklogo.com.png",
     url: "https://thirdweb.com",
     description: "Complete web3 development framework"
   },
   Moralis: {
-    logo: "https://moralis.io/wp-content/uploads/2021/06/moralisLogoSVG.svg",
+    logo: "https://seeklogo.com/images/M/moralis-logo-0EAD1C3F8D-seeklogo.com.png",
     url: "https://moralis.io",
     description: "Web3 Development Platform"
   },
   Alchemy: {
-    logo: "https://www.alchemy.com/assets/alchemy-logo.svg",
+    logo: "https://seeklogo.com/images/A/alchemy-logo-0EAD1C3F8D-seeklogo.com.png",
     url: "https://www.alchemy.com",
     description: "The leading blockchain developer platform"
   },
   Infura: {
-    logo: "https://infura.io/images/infura-logo.svg",
+    logo: "https://seeklogo.com/images/I/infura-logo-0EAD1C3F8D-seeklogo.com.png",
     url: "https://infura.io",
     description: "Web3 Infrastructure"
   },
   Hardhat: {
-    logo: "https://hardhat.org/hardhat-logo.svg",
+    logo: "https://seeklogo.com/images/H/hardhat-logo-0EAD1C3F8D-seeklogo.com.png",
     url: "https://hardhat.org",
     description: "Ethereum development environment"
   }

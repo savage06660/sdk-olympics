@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SDK_METADATA } from './SDKMetadata';
 
 const SDKComparison = ({ ratings, selectedSDK }) => {
+  const [imageErrors, setImageErrors] = useState({});
+
+  const handleImageError = (sdk) => {
+    setImageErrors(prev => ({ ...prev, [sdk]: true }));
+  };
+
   const allSDKs = {
     WalletConnect: { githubStars: 8500, npmDownloads: "1.2M", communityRating: 4.5 },
     Magic: { githubStars: 3200, npmDownloads: "500K", communityRating: 4.3 },
@@ -46,11 +52,14 @@ const SDKComparison = ({ ratings, selectedSDK }) => {
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 hover:text-blue-400 transition-colors"
                   >
-                    <img 
-                      src={SDK_METADATA[sdk].logo}
-                      alt={`${sdk} logo`}
-                      className="w-6 h-6 object-contain"
-                    />
+                    {!imageErrors[sdk] && (
+                      <img 
+                        src={SDK_METADATA[sdk].logo}
+                        alt={`${sdk} logo`}
+                        className="w-6 h-6 object-contain"
+                        onError={() => handleImageError(sdk)}
+                      />
+                    )}
                     <div>
                       <span className="font-medium text-gray-200">{sdk}</span>
                       {sdk === selectedSDK && (

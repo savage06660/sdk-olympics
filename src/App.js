@@ -26,6 +26,7 @@ export default function App() {
   const [submitted, setSubmitted] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
   const [showComparison, setShowComparison] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const tasks = SDK_TASKS[selectedSDK] || [];
 
@@ -102,6 +103,7 @@ export default function App() {
                   setStepIndex(0);
                   setRatings({});
                   setSubmitted(false);
+                  setImageError(false);
                 }}
               >
                 <option value="">-- Select SDK --</option>
@@ -113,11 +115,14 @@ export default function App() {
               </select>
               {selectedSDK && (
                 <div className="mt-2 flex items-center space-x-3">
-                  <img 
-                    src={SDK_METADATA[selectedSDK].logo}
-                    alt={`${selectedSDK} logo`}
-                    className="w-6 h-6 object-contain"
-                  />
+                  {!imageError && (
+                    <img 
+                      src={SDK_METADATA[selectedSDK].logo}
+                      alt={`${selectedSDK} logo`}
+                      className="w-6 h-6 object-contain"
+                      onError={() => setImageError(true)}
+                    />
+                  )}
                   <a 
                     href={SDK_METADATA[selectedSDK].url}
                     target="_blank"
