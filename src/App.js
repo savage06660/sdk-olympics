@@ -6,6 +6,15 @@ const SDK_TASKS = {
   WalletConnect: ["Install SDK", "Connect Wallet", "Send Test Transaction"],
   Magic: ["Set up Magic Login", "Authenticate User", "Fetch User Metadata"],
   Coinbase: ["Initialize SDK", "Connect to dApp", "Sign Message"],
+  Web3Modal: ["Install Dependencies", "Configure Provider", "Connect Wallet", "Handle Events"],
+  RainbowKit: ["Setup Provider", "Configure Chains", "Add Connect Button", "Customize Theme"],
+  ethers: ["Install Package", "Connect to Provider", "Create Wallet", "Send Transaction"],
+  web3js: ["Setup Project", "Connect to Network", "Create Account", "Deploy Contract"],
+  Thirdweb: ["Initialize SDK", "Connect Wallet", "Deploy Contract", "Mint NFT"],
+  Moralis: ["Create Account", "Initialize SDK", "Fetch NFT Data", "Get Token Balance"],
+  Alchemy: ["Create API Key", "Setup Provider", "Get NFT Metadata", "Query Blockchain"],
+  Infura: ["Create Project", "Get API Keys", "Connect to Network", "Monitor Events"],
+  Hardhat: ["Initialize Project", "Write Smart Contract", "Run Tests", "Deploy to Network"]
 };
 
 export default function App() {

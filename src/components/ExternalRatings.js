@@ -28,6 +28,60 @@ const ExternalRatings = ({ selectedSDK }) => {
             npmDownloads: "800K",
             communityRating: 4.7,
             lastUpdated: "2024-03-21"
+          },
+          Web3Modal: {
+            githubStars: 5600,
+            npmDownloads: "900K",
+            communityRating: 4.6,
+            lastUpdated: "2024-03-18"
+          },
+          RainbowKit: {
+            githubStars: 4800,
+            npmDownloads: "750K",
+            communityRating: 4.8,
+            lastUpdated: "2024-03-17"
+          },
+          ethers: {
+            githubStars: 12000,
+            npmDownloads: "2.5M",
+            communityRating: 4.9,
+            lastUpdated: "2024-03-22"
+          },
+          web3js: {
+            githubStars: 15000,
+            npmDownloads: "3M",
+            communityRating: 4.7,
+            lastUpdated: "2024-03-21"
+          },
+          Thirdweb: {
+            githubStars: 3800,
+            npmDownloads: "600K",
+            communityRating: 4.4,
+            lastUpdated: "2024-03-20"
+          },
+          Moralis: {
+            githubStars: 2900,
+            npmDownloads: "450K",
+            communityRating: 4.2,
+            lastUpdated: "2024-03-19"
+          },
+          Alchemy: {
+            githubStars: 2100,
+            npmDownloads: "350K",
+            communityRating: 4.6,
+            lastUpdated: "2024-03-18"
+          },
+          Infura: {
+            githubStars: 1800,
+            npmDownloads: "300K",
+            communityRating: 4.5,
+            lastUpdated: "2024-03-17"
+          },
+          Hardhat: {
+            githubStars: 7200,
+            npmDownloads: "1.5M",
+            communityRating: 4.8,
+            lastUpdated: "2024-03-22"
           }
         };
 
