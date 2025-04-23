@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import RatingSummary from "./components/RatingSummary";
+import SDKComparison from "./components/SDKComparison";
 
 const SDK_TASKS = {
   WalletConnect: ["Install SDK", "Connect Wallet", "Send Test Transaction"],
@@ -23,6 +24,7 @@ export default function App() {
   const [stepIndex, setStepIndex] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
+  const [showComparison, setShowComparison] = useState(false);
 
   const tasks = SDK_TASKS[selectedSDK] || [];
 
@@ -49,25 +51,38 @@ export default function App() {
     setStepIndex(0);
     setSubmitted(false);
     setShowSummary(false);
+    setShowComparison(false);
   };
 
   return (
     <div className="min-h-screen bg-gray-100 p-6 font-sans">
-      <div className="max-w-xl mx-auto space-y-6">
+      <div className="max-w-4xl mx-auto space-y-6">
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl font-bold">🏅 SDK Olympics</h1>
+          <div className="space-x-4">
+            {Object.keys(ratings).length > 0 && (
+              <button
+                onClick={() => setShowSummary(true)}
+                className="text-blue-600 hover:text-blue-800 font-medium"
+              >
+                View Summary
+              </button>
+            )}
+            <button
+              onClick={() => setShowComparison(!showComparison)}
+              className="text-blue-600 hover:text-blue-800 font-medium"
+            >
+              {showComparison ? "Hide Comparison" : "Show Comparison"}
+            </button>
+          </div>
+        </div>
+
+        {showComparison && (
+          <SDKComparison ratings={ratings} selectedSDK={selectedSDK} />
+        )}
+
         {!showSummary ? (
           <div className="bg-white p-6 rounded-2xl shadow-lg space-y-6">
-            <div className="flex justify-between items-center">
-              <h1 className="text-2xl font-bold">🏅 SDK Olympics</h1>
-              {Object.keys(ratings).length > 0 && (
-                <button
-                  onClick={() => setShowSummary(true)}
-                  className="text-blue-600 hover:text-blue-800 font-medium"
-                >
-                  View Summary
-                </button>
-              )}
-            </div>
-
             <div className="space-y-2">
               <label className="block font-medium">Choose a Web3 SDK:</label>
               <select
